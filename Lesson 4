@@ -1,0 +1,100 @@
+public class EmployeeData {
+    private String name;
+    private String post;
+    private String email ;
+    private String phoneNumber;
+    private int wage;
+    private int age;
+
+    EmployeeData (String name,String post,String email,String phoneNumber,int wage,int age){
+        this.name = name;
+        this.post = post;
+        this.email = email;
+        this.phoneNumber=phoneNumber;
+        this.wage=wage;
+        this.age = age;
+        }
+
+
+    int GetAge() {
+        return age;
+    }
+
+    void  Show() {
+       System.out.println(name + "\n-"+
+               "post: "+post + "\n-"+
+               "email: " +email + "\n-"+
+               "phoneNumber: "+phoneNumber + "\n-"+
+               "wage: "+wage + "\n-"+
+               "age: "+age);
+       System.out.println();
+
+    }
+}
+
+public class Lesson4 {
+
+    public static void main(String[] args) {
+        Person[] persArray = new Person[5];
+        persArray[0] = new Person("Gradusov Roman", "Java Developer", "monomari86@gmail.com",
+                "89639007700", 120000, 33);
+        persArray[1] = new Person("Rudenko Ivan", "Engineer", "ivivan1@mailbox.com",
+                "89639007701", 60000, 41);
+        persArray[2] = new Person("Ivanov Alex", "Manager", "AI_box_wrk@mail.ru",
+                "89639007702", 50000, 35);
+        persArray[3] = new Person("Mikulin Semen", "System Administrator", "ivivan3@mailbox.com",
+                "89639007703", 65000, 34);
+        persArray[4] = new Person("Hlebnikov  Maxim", "Engineer", "ivivan4@mailbox.com",
+                "73472465123", 75000, 45);
+
+        System.out.println("Список сотрдуников старше 40 лет:");
+
+        for (Person employee : persArray) {
+          if (employee.GetAge() > 40)  employee.Show();
+
+            }
+        }
+
+        }
+
+        package lab.lesson3;
+
+public class Park {
+    private String name;
+    private String location;
+
+    public Park(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
+
+    public class Attraction {
+        private String attractionName;
+        private String workingHours;
+        private double cost;
+
+        public Attraction(String attractionName, String workingHours, double cost) {
+            this.attractionName = attractionName;
+            this.workingHours = workingHours;
+            this.cost = cost;
+        }
+
+        public void printInfo() {
+            System.out.println("Attraction Name: " + attractionName);
+            System.out.println("Working Hours: " + workingHours);
+            System.out.println("Cost: " + cost + " Руб");
+            System.out.println("--------------------------");
+        }
+    }
+
+    public static void main(String[] args) {
+        Park park = new Park("Wonderland", "Парк Горького");
+        Attraction rollerCoaster = park.new Attraction("Американские горки", "10:00 AM - 8:00 PM", 5.0);
+        Attraction ferrisWheel = park.new Attraction("Колесо обозрения", "9:00 AM - 10:00 PM", 3.0);
+        Attraction carousel = park.new Attraction("Карусель", "12:00 PM - 12:00 AM", 4.0);
+
+        rollerCoaster.printInfo();
+        ferrisWheel.printInfo();
+        carousel.printInfo();
+    }
+}
